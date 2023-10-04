@@ -52,7 +52,7 @@
 
     <div class="row mt-3">
       <div class="col">
-        <button type="submit" class="btn btn-primary" @click="salvarVaga()">Cadastrar</button>
+        <button type="submit" class="btn btn-primary" v-on:click="salvarVaga()">Cadastrar</button>
       </div>
     </div>
 
@@ -90,7 +90,14 @@ export default {
       })
       
       localStorage.setItem('vagas', JSON.stringify(vagas))
-      
+      this.resetaFormularioCadastroVaga()
+    },
+    resetaFormularioCadastroVaga() {
+      this.titulo = '',
+      this.descricao = '',
+      this.salario = '',
+      this.modalidade = '',
+      this.tipo = ''
     }
   }
 }
